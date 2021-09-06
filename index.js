@@ -122,17 +122,6 @@ app.post('/create_user',(req,res)=>{
         res.redirect("fetch_users")
     })
 });
-app.get("/edit_user/:id",(req,res)=>{
-   const sql=`SELECT * from user WHERE user_id=?;`
-   const id=req.params.id
-   id=1
-   db.get(sql,id,(err,row)=>{
-       if(err){
-           return console.log(err.message)
-       }
-       res.redirect("fetch_user")
-   })
-});
 
 app.post("/delete/:id",(req,res)=>{
     const id=req.params.id
